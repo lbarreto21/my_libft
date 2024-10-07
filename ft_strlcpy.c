@@ -1,21 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/05 20:47:18 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/07 12:45:00 by lbarreto         ###   ########.fr       */
+/*   Created: 2024/10/07 12:24:49 by lbarreto          #+#    #+#             */
+/*   Updated: 2024/10/07 12:42:28 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	i;
+#include "libft.h"
 
+size_t	strlcpy(char *dst, const char *src, size_t size)
+{
+	unsigned int	i;
+	unsigned int	srclen;
+
+	srclen = ft_strlen((char *)src);
 	i = 0;
-	while (str[i])
+	if (size == 0)
+		return (srclen);
+	while ((i < size - 1) && src[i])
+	{
+		dst[i] = src[i];
 		i++;
-	return (i);
+	}
+	dst[i] = '\0';
+	return (srclen);
 }
+/*
+int	main(void)
+{
+	char	str[10] = "abc";
+	int		size;
+	
+	size = strlcpy(str, "testing", 0);
+	printf("size: %d - string: %s", size, str);
+}
+*/

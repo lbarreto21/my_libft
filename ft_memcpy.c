@@ -1,18 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/05 20:47:10 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/07 12:44:28 by lbarreto         ###   ########.fr       */
+/*   Created: 2024/10/07 10:41:49 by lbarreto          #+#    #+#             */
+/*   Updated: 2024/10/07 12:46:14 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int ch)
+#include "libft.h"
+
+void	*memcpy(void *dest, const void *src, size_t n)
 {
-	if (ch < 32 || ch > 126)
-		return (0);
-	return (1);
+	unsigned char	*d;
+	unsigned char	*s;
+	unsigned int	i;
+
+	d = (unsigned char *)dest;
+	s = (unsigned char *)src;
+	i = 0;
+	if (dest == NULL || src == NULL)
+		return (NULL);
+	while (i < n)
+	{
+		d[i] = s[i];
+		i++;
+	}
+	return (dest);
 }
+/*
+int	main(void)
+{
+	char	str[10] = "Start stop";
+	memcpy(str + 2, str, 3);
+	printf("%s", str);
+}
+*/

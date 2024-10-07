@@ -6,19 +6,19 @@
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 20:39:47 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/05 20:39:47 by lbarreto         ###   ########.fr       */
+/*   Updated: 2024/10/07 12:48:20 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int ft_isalnum(int ch)
+int	ft_isalnum(int ch)
 {
-    if ((ch < 97 || ch > 122) && (ch < 48 || ch > 57) && (ch < 65 || ch > 90))
-        return (0);
-    return (1);
+	if ((ch < 97 || ch > 122) && (ch < 48 || ch > 57) && (ch < 65 || ch > 90))
+		return (0);
+	return (1);
 }
 /*
+#include "libft.h"
+
 int main(void)
 {
     printf("%d", ft_isalnum('4'));

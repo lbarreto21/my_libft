@@ -6,15 +6,13 @@
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 20:47:00 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/05 20:47:00 by lbarreto         ###   ########.fr       */
+/*   Updated: 2024/10/07 12:47:43 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int ft_isascii(int ch)
+int	ft_isascii(int ch)
 {
-    if(ch < 0 || ch > 127)
-        return (0);
-    return (1);
+	if (ch < 0 || ch > 127)
+		return (0);
+	return (1);
 }

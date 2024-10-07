@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/05 20:47:10 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/07 12:44:28 by lbarreto         ###   ########.fr       */
+/*   Created: 2024/10/07 12:49:47 by lbarreto          #+#    #+#             */
+/*   Updated: 2024/10/07 12:50:32 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int ch)
+#include "libft.h"
+
+size_t	strlcat(char *dst, const char *src, size_t size)
 {
-	if (ch < 32 || ch > 126)
-		return (0);
-	return (1);
+	
 }

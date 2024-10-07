@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isalpha.c                                          :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 17:44:15 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/05 17:44:15 by lbarreto         ###   ########.fr       */
+/*   Updated: 2024/10/07 12:47:12 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int ft_isalpha(int ch)
+int	ft_isalpha(int ch)
 {
-    if ((ch < 'a' || ch > 'z') && (ch < 'A' || ch > 'Z' ))
-        return (0);
-    return (1);
+	if ((ch < 'a' || ch > 'z') && (ch < 'A' || ch > 'Z' ))
+		return (0);
+	return (1);
 }
 /*
+#include "libft.h"
+
 int main(void)
 {
     printf("%d", isalpha('1'));

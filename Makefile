@@ -2,19 +2,19 @@ CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra
 
-PROG = My_program
+NAME = libft.a
 
 SRCS = ft_isalpha.c ft_isdigit.c ft_strlen.c
 
 OBJS = $(SRCS:.c=.o)
 
-all: $(PROG)
+all: $(NAME)
 
-$(PROG): $(OBJS)
-	CC CFLAGS -o $(PROG) $(OBJS)
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
 $(OBJS): $(SRCS)
-	CC CFLAGS -c $(SCRS)
+	$(CC) $(CFLAGS) -c $(SCRS)
 
 clean: 
 	rm -f $(OBJS)
