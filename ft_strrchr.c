@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 12:24:49 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/08 15:30:12 by lbarreto         ###   ########.fr       */
+/*   Created: 2024/10/07 15:35:52 by lbarreto          #+#    #+#             */
+/*   Updated: 2024/10/07 15:43:52 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+char	*ft_strrchr(const char *s, int c)
 {
-	unsigned int	i;
-	unsigned int	srclen;
+	int	len;
 
-	srclen = ft_strlen((char *)src);
-	i = 0;
-	if (size == 0)
-		return (srclen);
-	while ((i < size - 1) && src[i])
+	len = ft_strlen((char *)s);
+	while (len)
 	{
-		dst[i] = src[i];
-		i++;
+		if (c == s[len])
+			return ((char *)(s + len));
+		len--;
 	}
-	dst[i] = '\0';
-	return (srclen);
+	return (NULL);
 }
 /*
 int	main(void)
 {
-	char	str[10] = "abc";
-	int		size;
-	
-	size = strlcpy(str, "testing", 0);
-	printf("size: %d - string: %s", size, str);
+	printf("%s", ft_strrchr("abcde", 'c'));
 }
 */

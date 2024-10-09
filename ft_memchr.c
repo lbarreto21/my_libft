@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 12:24:49 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/08 15:30:12 by lbarreto         ###   ########.fr       */
+/*   Created: 2024/10/07 16:06:28 by lbarreto          #+#    #+#             */
+/*   Updated: 2024/10/08 15:27:11 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
+	unsigned char	*mem;
 	unsigned int	i;
-	unsigned int	srclen;
 
-	srclen = ft_strlen((char *)src);
+	mem = (unsigned char *)s;
 	i = 0;
-	if (size == 0)
-		return (srclen);
-	while ((i < size - 1) && src[i])
+	if (mem == NULL)
+		return (NULL);
+	while (mem[i] && i < n)
 	{
-		dst[i] = src[i];
+		if (mem[i] == (unsigned char)c)
+			return ((void *)(s + i));
 		i++;
 	}
-	dst[i] = '\0';
-	return (srclen);
+	return (NULL);
 }
 /*
 int	main(void)
 {
-	char	str[10] = "abc";
-	int		size;
-	
-	size = strlcpy(str, "testing", 0);
-	printf("size: %d - string: %s", size, str);
+	printf("%s", (char *)memchr("abcde", 'd', 5));
 }
 */

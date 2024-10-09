@@ -1,41 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 12:24:49 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/08 15:30:12 by lbarreto         ###   ########.fr       */
+/*   Created: 2024/10/08 15:41:26 by lbarreto          #+#    #+#             */
+/*   Updated: 2024/10/08 15:54:39 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	unsigned int	i;
-	unsigned int	srclen;
+	char	*result;
+	size_t	s1_len;
+	size_t	total_len;
 
-	srclen = ft_strlen((char *)src);
-	i = 0;
-	if (size == 0)
-		return (srclen);
-	while ((i < size - 1) && src[i])
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (srclen);
+	s1_len = ft_strlen((char *) s1);
+	total_len = ft_strlen((char *) s1) + ft_strlen((char *) s2) + 1;
+	result = (char *)malloc(total_len * sizeof(char));
+	if (!result)
+		return (NULL);
+	ft_memmove(result, s1, s1_len);
+	ft_strlcat(result, s2, total_len);
+	return (result);
 }
 /*
 int	main(void)
 {
-	char	str[10] = "abc";
-	int		size;
-	
-	size = strlcpy(str, "testing", 0);
-	printf("size: %d - string: %s", size, str);
+	printf("%s", ft_strjoin("Hello ", "World!"));
 }
 */

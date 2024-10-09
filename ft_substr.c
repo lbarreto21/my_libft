@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 12:24:49 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/08 15:30:12 by lbarreto         ###   ########.fr       */
+/*   Created: 2024/10/08 15:32:59 by lbarreto          #+#    #+#             */
+/*   Updated: 2024/10/08 15:41:09 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned int	i;
-	unsigned int	srclen;
+	char	*sub;
 
-	srclen = ft_strlen((char *)src);
-	i = 0;
-	if (size == 0)
-		return (srclen);
-	while ((i < size - 1) && src[i])
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (srclen);
+	sub = (char *)malloc(len + 1);
+	if (sub == NULL)
+		return (NULL);
+	ft_memmove(sub, s + start, len);
+	sub[len] = '\0';
+	return (sub);
 }
 /*
 int	main(void)
 {
-	char	str[10] = "abc";
-	int		size;
-	
-	size = strlcpy(str, "testing", 0);
-	printf("size: %d - string: %s", size, str);
+	printf("%s", ft_substr("testing", 3, 20));
 }
 */

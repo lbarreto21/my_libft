@@ -1,41 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 12:24:49 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/08 15:30:12 by lbarreto         ###   ########.fr       */
+/*   Created: 2024/10/08 11:28:39 by lbarreto          #+#    #+#             */
+/*   Updated: 2024/10/08 11:52:29 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	unsigned int	i;
-	unsigned int	srclen;
+	void	*mem;
 
-	srclen = ft_strlen((char *)src);
-	i = 0;
-	if (size == 0)
-		return (srclen);
-	while ((i < size - 1) && src[i])
+	if (nmemb * size > 2147483647)
+		return (NULL);
+	else if (nmemb == 0 || size == 0)
 	{
-		dst[i] = src[i];
-		i++;
+		mem = (unsigned char *)malloc(1);
+		ft_bzero(mem, 1);
+		return ((void *)mem);
 	}
-	dst[i] = '\0';
-	return (srclen);
+	mem = (unsigned char *)malloc(nmemb * size);
+	if (!mem)
+		return (NULL);
+	ft_bzero(mem, nmemb * size);
+	return ((void *)mem);
 }
 /*
 int	main(void)
 {
-	char	str[10] = "abc";
-	int		size;
-	
-	size = strlcpy(str, "testing", 0);
-	printf("size: %d - string: %s", size, str);
+	char	*ptr;
+	int		i;
+
+	i = 0;
+	ptr = ft_calloc(50, 2);
+	while (i < 100)
+	{
+		printf("%d", (int)ptr[i]);
+		i++;
+	}
 }
 */

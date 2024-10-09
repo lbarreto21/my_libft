@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 12:24:49 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/08 15:30:12 by lbarreto         ###   ########.fr       */
+/*   Created: 2024/10/07 15:44:42 by lbarreto          #+#    #+#             */
+/*   Updated: 2024/10/08 15:29:18 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	i;
-	unsigned int	srclen;
+	size_t	i;
 
-	srclen = ft_strlen((char *)src);
+	if (n == 0)
+		return (0);
 	i = 0;
-	if (size == 0)
-		return (srclen);
-	while ((i < size - 1) && src[i])
-	{
-		dst[i] = src[i];
+	while (s1[i] == s2[i] && s1[i] && s2[i] && i < n)
 		i++;
-	}
-	dst[i] = '\0';
-	return (srclen);
+	return (s1[i] - s2[i]);
 }
 /*
 int	main(void)
 {
-	char	str[10] = "abc";
-	int		size;
-	
-	size = strlcpy(str, "testing", 0);
-	printf("size: %d - string: %s", size, str);
+	printf("%d", strncmp("test", "testing", 5));
 }
 */
