@@ -6,7 +6,7 @@
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 16:43:40 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/10 12:08:25 by lbarreto         ###   ########.fr       */
+/*   Updated: 2024/10/10 19:01:54 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ char	**ft_split(char const *s, char c)
 	splited[j] = NULL;
 	return (splited);
 }
-
+/*
 int main (void)
 {
 	char	**strs;
@@ -112,4 +112,4 @@ int main (void)
 		i++;
 	}
 }
-
+*/

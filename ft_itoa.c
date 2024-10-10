@@ -6,7 +6,7 @@
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 14:03:34 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/09 15:11:48 by lbarreto         ###   ########.fr       */
+/*   Updated: 2024/10/10 15:55:01 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,6 @@ char	*ft_itoa(int n)
 /*
 int	main(void)
 {
-	printf("%s", ft_itoa(-0));
+	printf("%s", ft_itoa());
 }
 */
