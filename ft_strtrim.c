@@ -6,7 +6,7 @@
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 09:55:21 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/09 12:56:20 by lbarreto         ###   ########.fr       */
+/*   Updated: 2024/10/10 12:20:58 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	while (find_char(s1[0], set) == 1)
 		s1++;
-	len = ft_strlen((char *)s1);
+	len = ft_strlen(s1);
 	while (find_char(s1[len - 1], set) == 1)
 		len--;
 	trimmed_str = (char *)malloc(len + 1);
@@ -45,8 +45,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trimmed_str[len] = '\0';
 	return (trimmed_str);
 }
-
+/*
 int	main(void)
 {
 	printf("%s", ft_strtrim(" - test - ", "- "));
 }
+*/

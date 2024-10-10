@@ -6,7 +6,7 @@
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 12:49:47 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/09 12:11:10 by lbarreto         ###   ########.fr       */
+/*   Updated: 2024/10/10 12:24:24 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	unsigned int	i;
 
 	i = 0;
-	len = ft_strlen(dst) + ft_strlen((char *)src);
+	len = ft_strlen(dst) + ft_strlen(src);
 	if (len > size)
-		return (size + ft_strlen((char *)src));
+		return (size + ft_strlen(src));
 	if (size == 0)
 		return (len);
 	else

@@ -1,33 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 15:35:52 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/10 12:25:02 by lbarreto         ###   ########.fr       */
+/*   Created: 2024/10/10 12:17:24 by lbarreto          #+#    #+#             */
+/*   Updated: 2024/10/10 12:18:28 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_putstr_fd(char *s, int fd)
 {
-	int	len;
-
-	len = ft_strlen(s);
-	while (len)
-	{
-		if (c == s[len])
-			return (s + len);
-		len--;
-	}
-	return (NULL);
+	write(fd, s, ft_strlen(s));
 }
-/*
-int	main(void)
-{
-	printf("%s", ft_strrchr("abcde", 'c'));
-}
-*/

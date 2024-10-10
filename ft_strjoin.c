@@ -6,7 +6,7 @@
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 15:41:26 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/08 15:54:39 by lbarreto         ###   ########.fr       */
+/*   Updated: 2024/10/10 12:23:24 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	s1_len;
 	size_t	total_len;
 
-	s1_len = ft_strlen((char *) s1);
-	total_len = ft_strlen((char *) s1) + ft_strlen((char *) s2) + 1;
+	s1_len = ft_strlen(s1);
+	total_len = ft_strlen(s1) + ft_strlen(s2) + 1;
 	result = (char *)malloc(total_len * sizeof(char));
 	if (!result)
 		return (NULL);

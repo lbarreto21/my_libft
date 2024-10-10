@@ -6,7 +6,7 @@
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 11:53:21 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/08 12:12:18 by lbarreto         ###   ########.fr       */
+/*   Updated: 2024/10/10 12:22:28 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strdup(const char *s)
 	size_t	len;
 	char	*dup;
 
-	len = ft_strlen((char *)s) + 1;
+	len = ft_strlen(s) + 1;
 	dup = (char *)malloc(len);
 	if (!dup)
 		return (NULL);
