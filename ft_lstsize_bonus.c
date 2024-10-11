@@ -1,27 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 18:47:31 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/11 11:23:32 by lbarreto         ###   ########.fr       */
+/*   Created: 2024/10/11 10:10:53 by lbarreto          #+#    #+#             */
+/*   Updated: 2024/10/11 10:44:23 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+int	ft_lstsize(t_list *lst)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	if (!s || !f)
-		return ;
-	while (s[i])
+	while (lst != NULL)
 	{
-		f(i, &s[i]);
 		i++;
+		lst = lst->next;
 	}
+	return (i);
 }
+/*
+int	main(void)
+{
+	t_list *list1;
+	t_list *list2;
+	t_list *list3;
+
+	list1 = ft_lstnew("My");
+	list2 = ft_lstnew("little");
+	list3 = ft_lstnew("test");
+	list1 -> next = list2;
+	list2 -> next = list3;
+	printf("%d", ft_lstsize(list1));
+}
+*/

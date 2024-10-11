@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 18:47:31 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/11 11:23:32 by lbarreto         ###   ########.fr       */
+/*   Created: 2024/10/11 10:44:54 by lbarreto          #+#    #+#             */
+/*   Updated: 2024/10/11 10:51:35 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+t_list	*ft_lstlast(t_list *lst)
 {
-	size_t	i;
-
-	i = 0;
-	if (!s || !f)
-		return ;
-	while (s[i])
-	{
-		f(i, &s[i]);
-		i++;
-	}
+	while (lst -> next != NULL)
+		lst = lst -> next;
+	return (lst);
 }
+/*
+int	main(void)
+{
+	t_list	*list1;
+	t_list	*list2;
+
+	list1 = ft_lstnew("Fourty");
+	list2 = ft_lstnew("Two");
+	list1 -> next = list2;
+	printf("%s", (char *)ft_lstlast(list1)->content);
+}
+*/

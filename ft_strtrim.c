@@ -6,13 +6,13 @@
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 09:55:21 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/10 12:20:58 by lbarreto         ###   ########.fr       */
+/*   Updated: 2024/10/11 09:31:53 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	find_char(char chr, char const *set)
+static int	find_char(char chr, char const *set)
 {
 	int	i;
 
