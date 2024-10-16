@@ -6,7 +6,7 @@
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 10:44:54 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/11 10:51:35 by lbarreto         ###   ########.fr       */
+/*   Updated: 2024/10/15 12:58:38 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	while (lst -> next != NULL)
-		lst = lst -> next;
+	if (!lst)
+		return (NULL);
+	while (lst->next != NULL)
+		lst = lst->next;
 	return (lst);
 }
 /*

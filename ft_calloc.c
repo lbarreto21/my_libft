@@ -6,7 +6,7 @@
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 11:28:39 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/08 11:52:29 by lbarreto         ###   ########.fr       */
+/*   Updated: 2024/10/14 13:48:24 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,21 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*mem;
+	size_t	memsize;
 
-	if (nmemb * size > 2147483647)
-		return (NULL);
-	else if (nmemb == 0 || size == 0)
+	memsize = nmemb * size;
+	if (nmemb == 0 || size == 0)
 	{
 		mem = (unsigned char *)malloc(1);
 		ft_bzero(mem, 1);
 		return ((void *)mem);
 	}
-	mem = (unsigned char *)malloc(nmemb * size);
+	if (memsize / nmemb != size)
+		return (NULL);
+	mem = (unsigned char *)malloc(memsize);
 	if (!mem)
 		return (NULL);
-	ft_bzero(mem, nmemb * size);
+	ft_bzero(mem, memsize);
 	return ((void *)mem);
 }
 /*

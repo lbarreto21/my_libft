@@ -6,7 +6,7 @@
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 15:35:52 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/10 12:25:02 by lbarreto         ###   ########.fr       */
+/*   Updated: 2024/10/12 13:04:02 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	len;
+	size_t	len;
 
 	len = ft_strlen(s);
+	if (c == 0)
+		return ((char *)s + len);
 	while (len)
 	{
-		if (c == s[len])
-			return (s + len);
+		if ((unsigned char)c == s[len - 1])
+			return ((char *)s + len - 1);
 		len--;
 	}
 	return (NULL);
@@ -28,6 +30,6 @@ char	*ft_strrchr(const char *s, int c)
 /*
 int	main(void)
 {
-	printf("%s", ft_strrchr("abcde", 'c'));
+	printf("%s", ft_strrchr("abcde", 'a'));
 }
 */

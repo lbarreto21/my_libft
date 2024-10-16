@@ -6,7 +6,7 @@
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 15:41:26 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/10 12:23:24 by lbarreto         ###   ########.fr       */
+/*   Updated: 2024/10/16 11:38:55 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	result = (char *)malloc(total_len * sizeof(char));
 	if (!result)
 		return (NULL);
-	ft_memmove(result, s1, s1_len);
-	ft_strlcat(result, s2, total_len);
+	ft_strlcpy(result, s1, s1_len + 1);
+	ft_strlcpy(result + s1_len, s2, total_len);
 	return (result);
 }
 /*
 int	main(void)
 {
-	printf("%s", ft_strjoin("Hello ", "World!"));
+	printf("%s", ft_strjoin("tripouille", "42"));
 }
 */

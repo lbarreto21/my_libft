@@ -6,27 +6,28 @@
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 10:50:51 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/08 11:10:05 by lbarreto         ###   ########.fr       */
+/*   Updated: 2024/10/15 14:48:18 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	find_ocurrence(const char *big, const char *little)
+static int	find(const char *big, const char *little, size_t len, size_t i)
 {
-	size_t	i;
 	size_t	j;
+	size_t	k;
 
-	i = 0;
 	j = 0;
-	while (big[i])
+	k = 0;
+	while (i <= len)
 	{
-		if (little[j] == '\0')
+		if (little[k] == '\0')
 			return (1);
-		if (big[i] == little[j])
-			j++;
+		if (big[j] == little[k])
+			k++;
 		else
 			return (0);
+		j++;
 		i++;
 	}
 	return (0);
@@ -36,12 +37,14 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 
-	if (!(little))
+	if (little == NULL || big == NULL)
+		return ((char *)big);
+	if (little[0] == 0 && big[0] == 0)
 		return ((char *)big);
 	i = 0;
-	while (i < len)
+	while (i < len && big[i])
 	{
-		if (find_ocurrence(big + i, little) == 1)
+		if (find(big + i, little, len, i) == 1)
 			return ((char *)big + i);
 		i++;
 	}
@@ -50,6 +53,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 /*
 int	main(void)
 {
-	printf("%s", ft_strnstr("abcde", "", 5));
+	printf("%s", ft_strnstr("aaabcabcd", "aabc", -1));
 }
 */

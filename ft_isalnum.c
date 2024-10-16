@@ -6,7 +6,7 @@
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 20:39:47 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/07 12:48:20 by lbarreto         ###   ########.fr       */
+/*   Updated: 2024/10/16 11:49:48 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ int	ft_isalnum(int ch)
 }
 /*
 #include "libft.h"
+#include <stdio.h>
 
 int main(void)
 {
-    printf("%d", ft_isalnum('4'));
+    printf("%d", ft_isalnum('9'));
+
 }
 */

@@ -6,44 +6,44 @@
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 12:49:47 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/10 12:24:24 by lbarreto         ###   ########.fr       */
+/*   Updated: 2024/10/16 12:56:34 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <bsd/string.h>
+#include <stdio.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	unsigned int	len;
-	unsigned int	i;
+	size_t	len;
+	size_t	i;
 
 	i = 0;
 	len = ft_strlen(dst) + ft_strlen(src);
-	if (len > size)
+	if (ft_strlen(dst) >= size)
 		return (size + ft_strlen(src));
 	if (size == 0)
-		return (len);
-	else
+		return (ft_strlen(src));
+	while (dst[i])
+		i++;
+	while (*src && i < size - 1)
 	{
-		while (dst[i])
-			i++;
-		while (*src && i < size - 1)
-		{
-			dst[i] = *src;
-			i++;
-			src++;
-		}
-		dst[i] = '\0';
-		return (len);
+		dst[i] = *src;
+		i++;
+		src++;
 	}
+	dst[i] = '\0';
+	return (len);
 }
 /*
+#include <bsd/string.h>
 int	main (void)
 {
-	char	dest[10] = "Hello";
-	size_t	size = ft_strlcat(dest, "aa", 3);
-
-	printf("String: %s\n Size: %zu\n", dest, size);
+	char	dest1[13] = "tripouille";
+	char	dest2[13] = "tripouille";
+	size_t	size1 = ft_strlcat(dest1, "42", 13);
+	size_t	size2 = strlcat(dest2, "42", 13);
+	printf("My String: %s\n My Size: %zu\n", dest1, size1);
+	printf("Original String: %s\n Original Size: %zu\n", dest2, size2);
 }
 */

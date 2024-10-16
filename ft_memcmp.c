@@ -6,7 +6,7 @@
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 16:50:26 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/08 15:26:56 by lbarreto         ###   ########.fr       */
+/*   Updated: 2024/10/12 12:53:11 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	else
 	{
 		i = 0;
-		while (str1[i] == str2[i] && str1[i] && str2[i] && i < n - 1)
+		while (str1[i] == str2[i] && i < n - 1)
 			i++;
 		return (str1[i] - str2[i]);
 	}

@@ -6,7 +6,7 @@
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 10:52:02 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/11 11:13:43 by lbarreto         ###   ########.fr       */
+/*   Updated: 2024/10/16 11:44:53 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	t_list	*temp_start;
 
 	temp_start = *lst;
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
 	while (temp_start->next != NULL)
 		temp_start = temp_start->next;
 	temp_start->next = new;

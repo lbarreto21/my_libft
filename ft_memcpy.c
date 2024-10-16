@@ -6,7 +6,7 @@
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 10:41:49 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/08 12:00:38 by lbarreto         ###   ########.fr       */
+/*   Updated: 2024/10/12 12:04:48 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	d = (unsigned char *)dest;
 	s = (unsigned char *)src;
 	i = 0;
-	if (dest == NULL || src == NULL)
+	if (dest == NULL)
 		return (NULL);
 	while (i < n)
 	{

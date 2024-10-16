@@ -6,7 +6,7 @@
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 11:10:35 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/08 11:28:04 by lbarreto         ###   ########.fr       */
+/*   Updated: 2024/10/15 14:47:52 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,17 @@ int	ft_atoi(const char *nptr)
 	nbr = 0;
 	i = 0;
 	n = 1;
-	while (nptr[i] <= 32 || nptr[i] == 127)
+	while (nptr[i] == '\n' || nptr[i] == '\t' || nptr[i] == '\r'
+		|| nptr[i] == 127 || nptr[i] == ' '
+		|| nptr[i] == '\v' || nptr[i] == '\f')
 		i++;
 	if (nptr[i] == '-')
 	{
 		n = -n;
 		i++;
 	}
+	else if (nptr[i] == '+')
+		i++;
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		nbr = (nbr * 10) + (nptr[i] - '0');
@@ -38,7 +42,7 @@ int	ft_atoi(const char *nptr)
 
 int	main (void)
 {
-	printf("My Atoi: %d\n", ft_atoi("  - 1 2 3"));
-	printf("Original Atoi: %d", atoi("  - 1 2 3"));
+	printf("My Atoi: %d\n", ft_atoi(""));
+	printf("Original Atoi: %d", atoi(""));
 }
 */

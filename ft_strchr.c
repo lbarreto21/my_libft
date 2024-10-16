@@ -6,7 +6,7 @@
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 15:20:26 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/08 15:29:50 by lbarreto         ###   ########.fr       */
+/*   Updated: 2024/10/12 12:57:31 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	if (c == 0)
+	if (!s)
+		return (NULL);
+	if ((unsigned char)c == 0)
 	{
 		while (*s)
 			s++;
@@ -24,7 +26,7 @@ char	*ft_strchr(const char *s, int c)
 	{
 		while (*s)
 		{
-			if (c == *s)
+			if ((unsigned char)c == *s)
 				return ((char *) s);
 			s++;
 		}
