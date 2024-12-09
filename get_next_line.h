@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 16:06:28 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/12/09 17:57:05 by lbarreto         ###   ########.fr       */
+/*   Created: 2024/11/04 16:14:32 by lbarreto          #+#    #+#             */
+/*   Updated: 2024/11/06 12:00:25 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-void	*ft_memchr(const void *s, int c, size_t n)
-{
-	unsigned char	*mem;
-	unsigned int	i;
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
 
-	mem = (unsigned char *)s;
-	i = 0;
-	if (mem == NULL)
-		return (NULL);
-	while (i < n)
-	{
-		if (mem[i] == (unsigned char)c)
-			return ((unsigned char *)(s + i));
-		i++;
-	}
-	return (NULL);
-}
-/*
-#include <stdio.h>
-int	main(void)
-{
+# include <stdlib.h>
+# include <unistd.h>
 
-	printf("%s", (char *)ft_memchr("012345", 's', 10));
-}
-*/
+char	*ft_strdup(char *str);
+int		ft_strlen(char *str);
+int		linelen(char *line);
+char	*line_cut(char *line);
+char	*next_line(char	*line);
+char	*get_next_line(int fd);
+
+#endif

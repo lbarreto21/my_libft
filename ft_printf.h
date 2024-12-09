@@ -1,39 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 16:06:28 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/12/09 17:57:05 by lbarreto         ###   ########.fr       */
+/*   Created: 2024/10/17 13:40:07 by lbarreto          #+#    #+#             */
+/*   Updated: 2024/10/26 13:56:36 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-void	*ft_memchr(const void *s, int c, size_t n)
-{
-	unsigned char	*mem;
-	unsigned int	i;
+# include <unistd.h>
+# include <stdarg.h>
 
-	mem = (unsigned char *)s;
-	i = 0;
-	if (mem == NULL)
-		return (NULL);
-	while (i < n)
-	{
-		if (mem[i] == (unsigned char)c)
-			return ((unsigned char *)(s + i));
-		i++;
-	}
-	return (NULL);
-}
-/*
-#include <stdio.h>
-int	main(void)
-{
+int	ft_putchar(char c);
+int	ft_putnbr(int n);
+int	ft_putstr(char const *str);
+int	ft_putnbr_base(unsigned int n, char *base);
+int	ft_putpointer(void *ptr);
+int	ft_printf(char const *s, ...);
 
-	printf("%s", (char *)ft_memchr("012345", 's', 10));
-}
-*/
+#endif

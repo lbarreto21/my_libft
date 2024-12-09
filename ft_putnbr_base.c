@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 16:06:28 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/12/09 17:57:05 by lbarreto         ###   ########.fr       */
+/*   Created: 2024/10/17 13:44:39 by lbarreto          #+#    #+#             */
+/*   Updated: 2024/10/22 09:35:34 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_putnbr_base(unsigned int n, char *base)
 {
-	unsigned char	*mem;
-	unsigned int	i;
+	unsigned int	base_size;
+	int				number_size;
 
-	mem = (unsigned char *)s;
-	i = 0;
-	if (mem == NULL)
-		return (NULL);
-	while (i < n)
+	base_size = 0;
+	number_size = 0;
+	while (base[base_size])
+		base_size++;
+	if (n >= base_size)
 	{
-		if (mem[i] == (unsigned char)c)
-			return ((unsigned char *)(s + i));
-		i++;
+		number_size += ft_putnbr_base(n / base_size, base);
+		number_size += ft_putnbr_base(n % base_size, base);
 	}
-	return (NULL);
+	else
+		number_size += write(1, base + n, 1);
+	return (number_size);
 }
-/*
-#include <stdio.h>
-int	main(void)
-{
-
-	printf("%s", (char *)ft_memchr("012345", 's', 10));
-}
-*/

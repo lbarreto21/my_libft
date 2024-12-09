@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 16:06:28 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/12/09 17:57:05 by lbarreto         ###   ########.fr       */
+/*   Created: 2024/10/17 13:41:21 by lbarreto          #+#    #+#             */
+/*   Updated: 2024/10/22 09:56:49 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+static int	mini_strlen(char const *str)
 {
-	unsigned char	*mem;
-	unsigned int	i;
+	int	i;
 
-	mem = (unsigned char *)s;
 	i = 0;
-	if (mem == NULL)
-		return (NULL);
-	while (i < n)
-	{
-		if (mem[i] == (unsigned char)c)
-			return ((unsigned char *)(s + i));
+	while (str[i])
 		i++;
-	}
-	return (NULL);
+	return (i);
 }
-/*
-#include <stdio.h>
-int	main(void)
-{
 
-	printf("%s", (char *)ft_memchr("012345", 's', 10));
+int	ft_putstr(char const *str)
+{
+	if (!str)
+		return (ft_putstr("(null)"));
+	return (write(1, str, mini_strlen(str)));
 }
-*/
