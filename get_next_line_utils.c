@@ -6,13 +6,13 @@
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 11:08:42 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/11/07 12:40:04 by lbarreto         ###   ########.fr       */
+/*   Updated: 2024/12/12 19:42:49 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_strdup(char *str)
+char	*gnl_strdup(char *str)
 {
 	int		i;
 	char	*dup;
@@ -29,9 +29,9 @@ char	*ft_strdup(char *str)
 	}
 	dup[i] = '\0';
 	return (dup);
-}
+} 
 
-int	ft_strlen(char *str)
+int	gnl_strlen(char *str)
 {
 	int	i;
 
@@ -85,7 +85,7 @@ char	*next_line(char	*line)
 	char	*next_line;
 
 	line_end = linelen(line);
-	next_line = ft_strdup(line + line_end);
+	next_line = gnl_strdup(line + line_end);
 	free(line);
 	return (next_line);
 }

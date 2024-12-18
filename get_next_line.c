@@ -6,7 +6,7 @@
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:31:14 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/11/14 05:36:36 by lbarreto         ###   ########.fr       */
+/*   Updated: 2024/12/12 19:43:07 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	findline(char *line)
 	return (0);
 }
 
-static char	*ft_strjoin(char *s1, char *s2)
+static char	*gnl_strjoin(char *s1, char *s2)
 {
 	int		i;
 	int		j;
@@ -46,8 +46,8 @@ static char	*ft_strjoin(char *s1, char *s2)
 
 	i = 0;
 	j = 0;
-	s1_len = ft_strlen(s1);
-	join = (char *)malloc((s1_len + ft_strlen(s2) + 1) * sizeof(char));
+	s1_len = gnl_strlen(s1);
+	join = (char *)malloc((s1_len + gnl_strlen(s2) + 1) * sizeof(char));
 	if (join == NULL)
 		return (NULL);
 	while (i < s1_len)
@@ -85,7 +85,7 @@ static char	*get_line(int fd, char *line)
 			break ;
 		}
 		buffer[bytes_read] = '\0';
-		line = ft_strjoin(line, buffer);
+		line = gnl_strjoin(line, buffer);
 		buffer = NULL;
 		verify_line = findline(line);
 	}

@@ -6,7 +6,7 @@
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 16:14:32 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/11/06 12:00:25 by lbarreto         ###   ########.fr       */
+/*   Updated: 2024/12/12 19:45:24 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
+#  define BUFFER_SIZE 42
 # endif
 
 # include <stdlib.h>
 # include <unistd.h>
 
-char	*ft_strdup(char *str);
-int		ft_strlen(char *str);
+char	*gnl_strdup(char *str);
+int		gnl_strlen(char *str);
 int		linelen(char *line);
 char	*line_cut(char *line);
 char	*next_line(char	*line);

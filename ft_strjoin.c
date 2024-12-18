@@ -6,26 +6,27 @@
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 15:41:26 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/16 11:38:55 by lbarreto         ###   ########.fr       */
+/*   Updated: 2024/12/12 20:06:45 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	char	*result;
-	size_t	s1_len;
-	size_t	total_len;
+	char	*join;
 
-	s1_len = ft_strlen(s1);
-	total_len = ft_strlen(s1) + ft_strlen(s2) + 1;
-	result = (char *)malloc(total_len * sizeof(char));
-	if (!result)
+	join = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	if (join == NULL)
 		return (NULL);
-	ft_strlcpy(result, s1, s1_len + 1);
-	ft_strlcpy(result + s1_len, s2, total_len);
-	return (result);
+	if (s1 != NULL)
+		ft_strlcpy(join, s1, ft_strlen(s1) + 1);
+	ft_strlcpy(join + ft_strlen(s1), s2, ft_strlen(s2) + 1);
+	join[ft_strlen(s1) + ft_strlen(s2)] = '\0';
+	if (s1 != NULL)
+		free(s1);
+	free(s2);
+	return (join);
 }
 /*
 int	main(void)

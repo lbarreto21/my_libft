@@ -6,7 +6,7 @@
 /*   By: lbarreto <lbarreto@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 15:15:41 by lbarreto          #+#    #+#             */
-/*   Updated: 2024/10/22 10:01:28 by lbarreto         ###   ########.fr       */
+/*   Updated: 2024/12/10 13:56:05 by lbarreto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int	print_param(va_list params, char const c)
 		return (ft_putchar (c));
 }
 
-int	ft_printf(char const *s, ...)
+int	my_printf(char const *s, ...)
 {
 	va_list	params;
 	int		i;
